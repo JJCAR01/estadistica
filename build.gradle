@@ -16,7 +16,6 @@ sonarqube {
 		property "sonar.projectKey", "JJCAR01_estadistica"
 		property "sonar.organization", "jjcar01"
 		property "sonar.host.url", "https://sonarcloud.io"
-		//SonarCloud
 	}
 }
 
