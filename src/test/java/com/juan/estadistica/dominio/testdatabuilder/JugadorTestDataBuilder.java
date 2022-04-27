@@ -7,17 +7,24 @@ import com.juan.estadistica.infraestructura.testdatabuilder.DtoJugadorTestDataBu
 public class JugadorTestDataBuilder {
 
     private String nombre;
+    private String apellido;
     private String numeroIdentificacion;
     private byte dorsal;
 
     public JugadorTestDataBuilder() {
         this.nombre = "Juan";
+        this.apellido = "CARDONA";
         this.numeroIdentificacion = "1289231929";
         this.dorsal = 4;
     }
 
     public JugadorTestDataBuilder conNombre(String nombre) {
         this.nombre = nombre;
+        return this;
+    }
+
+    public JugadorTestDataBuilder conApellido(String apellido) {
+        this.apellido = apellido;
         return this;
     }
 
@@ -31,5 +38,5 @@ public class JugadorTestDataBuilder {
     }
 
 
-    public Jugador build(){return new Jugador(nombre,numeroIdentificacion,dorsal);}
+    public Jugador build(){return new Jugador(nombre,apellido,numeroIdentificacion,dorsal);}
 }
