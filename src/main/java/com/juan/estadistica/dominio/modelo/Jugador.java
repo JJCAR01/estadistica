@@ -1,7 +1,10 @@
 package com.juan.estadistica.dominio.modelo;
 
+import com.juan.estadistica.aplicacion.dto.DtoJugador;
 import com.juan.estadistica.dominio.Utilitario.ValidacionNumero;
 import com.juan.estadistica.dominio.Utilitario.ValidacionTexto;
+
+import java.util.List;
 
 public class Jugador {
 

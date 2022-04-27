@@ -11,9 +11,10 @@ import java.util.List;
 @Getter
 public class DtoEquipo {
 
-    private int codigo;
     private String nombre;
     private String categoria;
 
     private List<DtoJugador> jugadores;
+
+
 }

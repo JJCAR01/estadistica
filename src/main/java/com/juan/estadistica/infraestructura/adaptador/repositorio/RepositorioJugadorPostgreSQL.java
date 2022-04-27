@@ -1,18 +1,19 @@
-    package com.juan.estadistica.infraestructura.adaptador.repositorio.jpa;
+package com.juan.estadistica.infraestructura.adaptador.repositorio;
 
 import com.juan.estadistica.dominio.modelo.Jugador;
 import com.juan.estadistica.dominio.puerto.RepositorioJugador;
+import com.juan.estadistica.infraestructura.adaptador.repositorio.jpa.RepositorioJugadorJpa;
 import com.juan.estadistica.infraestructura.entidad.EntidadJugador;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class RepositorioJugadorPotgreSQL implements RepositorioJugador {
+public class RepositorioJugadorPostgreSQL implements RepositorioJugador {
 
     private final RepositorioJugadorJpa repositorioJugadorJpa;
 
-    public RepositorioJugadorPotgreSQL(RepositorioJugadorJpa repositorioJugadorJpa) {
+    public RepositorioJugadorPostgreSQL(RepositorioJugadorJpa repositorioJugadorJpa) {
         this.repositorioJugadorJpa = repositorioJugadorJpa;
     }
 

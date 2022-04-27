@@ -13,4 +13,6 @@ public class DtoJugador {
     private String apellido;
     private String numeroIdentificacion;
     private byte dorsal;
+
+
 }

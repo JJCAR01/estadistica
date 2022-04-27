@@ -1,6 +1,7 @@
 package com.juan.estadistica.dominio.modelo;
 
 import com.juan.estadistica.aplicacion.dto.DtoEquipo;
+import com.juan.estadistica.dominio.Utilitario.ValidacionTexto;
 
 import java.util.Date;
 
@@ -12,9 +13,9 @@ public class Estadistica {
     private Equipo equipo;
 
     public static Estadistica of(Date fecha, int jornada, Equipo equipo){
-        validarObligatorio(String.valueOf(fecha),"La fecha no puede ser vacío");
-        validarObligatorio(String.valueOf(jornada),"La jornada no puede ser vacío");
-        validarObligatorio(String.valueOf(equipo),"El equipo no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(fecha),"La fecha no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(jornada),"La jornada no puede ser vacío");
+        ValidacionTexto.validarObligatorio  (String.valueOf(equipo),"El equipo no puede ser vacío");
 
         return new Estadistica(fecha,jornada,equipo);
     }
@@ -23,12 +24,6 @@ public class Estadistica {
         this.fecha = fecha;
         this.jornada = jornada;
         this.equipo = equipo;
-    }
-
-    private static void validarObligatorio(String valor, String mensaje) {
-        if(valor == null || valor.isBlank()) {
-            throw new IllegalArgumentException(mensaje);
-        }
     }
 
     public Date getFecha() {return fecha;}

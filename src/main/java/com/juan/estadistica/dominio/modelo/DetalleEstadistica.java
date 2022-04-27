@@ -1,7 +1,6 @@
 package com.juan.estadistica.dominio.modelo;
 
-import com.juan.estadistica.aplicacion.dto.DtoEstadistica;
-import com.juan.estadistica.aplicacion.dto.DtoJugador;
+import com.juan.estadistica.dominio.Utilitario.ValidacionTexto;
 
 import java.util.List;
 
@@ -20,27 +19,7 @@ public class DetalleEstadistica {
     private Estadistica estadistica;
     private List<Jugador> jugadores;
 
-    /*
-    public static DetalleEstadistica of(Integer tiros, Integer goles, Integer asistencias, Integer balonesPerdidos, Integer balonesRecuperados, Integer faltasRecibidas, Integer faltasOcasionadas,
-                                        Integer pases, Integer minutos, Estadistica estadistica, List<Jugador> jugadores){
-        validarObligatorio(String.valueOf(tiros), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(goles), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(asistencias), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(balonesPerdidos), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(balonesRecuperados), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(faltasRecibidas), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(faltasOcasionadas), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(pases), "Los tiros no puede ser vacío");
-        validarObligatorio(String.valueOf(minutos), "Los tiros no puede ser vacío");
-
-        return new (tiros,goles,asistencias,balonesPerdidos,balonesRecuperados,faltasOcasionadas,
-        faltasRecibidas,pases,minutos)
-    }
-
-     */
-
-    public DetalleEstadistica(Integer tiros, Integer goles, Integer asistencias, Integer balonesPerdidos, Integer balonesRecuperados, Integer faltasRecibidas, Integer faltasOcasionadas,
-                              Integer pases, Integer minutos, Estadistica estadistica, List<Jugador> jugadores) {
+    public DetalleEstadistica(Integer tiros, Integer goles, Integer asistencias, Integer balonesPerdidos, Integer balonesRecuperados, Integer faltasOcasionadas, Integer faltasRecibidas, Integer pases, Integer minutos) {
         this.tiros = tiros;
         this.goles = goles;
         this.asistencias = asistencias;
@@ -54,11 +33,22 @@ public class DetalleEstadistica {
         this.jugadores = jugadores;
     }
 
-    private static void validarObligatorio(String valor, String mensaje) {
-        if(valor == null || valor.isBlank()) {
-            throw new IllegalArgumentException(mensaje);
-        }
+    public static DetalleEstadistica of(Integer tiros, Integer goles, Integer asistencias, Integer balonesPerdidos, Integer balonesRecuperados, Integer faltasOcasionadas, Integer faltasRecibidas, Integer pases, Integer minutos)
+    {
+        ValidacionTexto.validarObligatorio(String.valueOf(tiros), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(goles), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(asistencias), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(balonesPerdidos), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(balonesRecuperados), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(faltasRecibidas), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(faltasOcasionadas), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(pases), "Los tiros no puede ser vacío");
+        ValidacionTexto.validarObligatorio(String.valueOf(minutos), "Los tiros no puede ser vacío");
+
+        return new DetalleEstadistica(tiros,goles,asistencias,balonesPerdidos,balonesRecuperados,faltasOcasionadas,
+                faltasRecibidas,pases,minutos);
     }
+    
 
     public Integer getTiros() {
         return tiros;
