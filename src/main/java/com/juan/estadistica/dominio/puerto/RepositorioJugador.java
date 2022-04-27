@@ -8,6 +8,8 @@ public interface RepositorioJugador {
 
     List<Jugador> listar();
     Jugador consultarPorId(Long id);
-    Long guardar(Jugador persona);
-    boolean existe(Jugador persona);
+    Long guardar(Jugador jugador);
+    boolean existe(Jugador jugador);
+    Long eliminar(Long Id);
+    Long modificar(Jugador jugador, Long Id);
 }

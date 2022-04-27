@@ -4,16 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class DtoEquipo {
+public class DtoRespuesta<T> {
 
-    private int codigo;
-    private String nombre;
-    private String categoria;
-
-    private List<DtoJugador> jugadores;
+    private T valor;
 }
